@@ -1,1 +1,1006 @@
-hello world
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to timedata’s documentation! &mdash; timedata 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="timedata 1.0 documentation" href="#" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-timedata-s-documentation">
+<h1>Welcome to timedata&#8217;s documentation!<a class="headerlink" href="#welcome-to-timedata-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+</div>
+<span class="target" id="module-timedata"></span><dl class="attribute">
+<dt id="timedata.Color">
+<code class="descclassname">timedata.</code><code class="descname">Color</code><a class="headerlink" href="#timedata.Color" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#timedata.ColorRGB" title="timedata.ColorRGB"><code class="xref py py-class docutils literal"><span class="pre">ColorRGB</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="timedata.ColorHSV">
+<em class="property">class </em><code class="descclassname">timedata.</code><code class="descname">ColorHSV</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorHSV" title="Permalink to this definition">¶</a></dt>
+<dd><p>A ColorHSV is an immutable RGB floating point color.</p>
+<p>A ColorHSV looks like a Python tuple with $size floating point numbers, with
+the big exception that operators like + and * perform arithmetic, not
+list-style operations.</p>
+<p>The constructor for ColorHSV takes a triple of numbers but also strings
+representing human-readable color names like &#8220;red&#8221; and &#8220;green&#8221;.</p>
+<p>ColorHSV supports the operations <cite>+</cite>, <cite>-</cite>, <cite>*</cite>, <cite>/</cite>, <cite>%</cite>, <cite>pow</cite>, and <cite>~</cite>
+(which means &#8220;take the complementary color&#8221;).</p>
+<p>ColorHSVs are very lightweight - about half the size of a corresponding
+Python tuple and more than twice as fast to create and copy.  ColorHSVs
+are also immutable - all operations on ColorHSVs have to create a new
+ColorHSV.</p>
+<p>The expected range of components in the color is from 0 to 1.0 but
+it&#8217;s perfectly acceptable to have any value in intermediate calculations,
+even infinity.</p>
+<dl class="method">
+<dt id="timedata.ColorHSV.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorHSV<a class="headerlink" href="#timedata.ColorHSV.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new copy of self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorHSV.distance">
+<code class="descname">distance</code><span class="sig-paren">(</span><em>self</em>, <em>x</em><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#timedata.ColorHSV.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorHSV.distance2">
+<code class="descname">distance2</code><span class="sig-paren">(</span><em>self</em>, <em>x</em><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#timedata.ColorHSV.distance2" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="timedata.ColorHSV.from_hex">
+<em class="property">static </em><code class="descname">from_hex</code><span class="sig-paren">(</span><em>uint32_t arg</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorHSV.from_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a $classname from a hex integer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorHSV.limit_max">
+<code class="descname">limit_max</code><span class="sig-paren">(</span><em>self</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorHSV.limit_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorHSV.limit_min">
+<code class="descname">limit_min</code><span class="sig-paren">(</span><em>self</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorHSV.limit_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorHSV.rotated">
+<code class="descname">rotated</code><span class="sig-paren">(</span><em>self</em>, <em>int index</em><span class="sig-paren">)</span> &rarr; ColorHSV<a class="headerlink" href="#timedata.ColorHSV.rotated" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorHSV.to_hex">
+<code class="descname">to_hex</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; uint32_t<a class="headerlink" href="#timedata.ColorHSV.to_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the nearest hex for this color</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="timedata.ColorList">
+<code class="descclassname">timedata.</code><code class="descname">ColorList</code><a class="headerlink" href="#timedata.ColorList" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#timedata.ColorListRGB" title="timedata.ColorListRGB"><code class="xref py py-class docutils literal"><span class="pre">ColorListRGB</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="timedata.ColorListHSV">
+<em class="property">class </em><code class="descclassname">timedata.</code><code class="descname">ColorListHSV</code><span class="sig-paren">(</span><em>items=None</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorListHSV" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of RGB floating point Colors, with many mutating functions.</p>
+<p>A ColorList looks quite like a Python list of Colors (which look like
+tuples) with the big interface difference that operations like + and *
+perform arithmetic and not list construction.</p>
+<p>Written in C++, this class should consume significantly fewer memory and
+CPU resources than a corresponding Python list, as well as providing a
+range of useful facilities.</p>
+<p>While ColorList provides a full set of functions and operations that
+create new ColorLists, in each case there is a corresponding mutating
+function or operation that works &#8220;in-place&#8221; with no heap allocations
+at all, for best performance.</p>
+<dl class="method">
+<dt id="timedata.ColorListHSV.abs">
+<code class="descname">abs</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.abs" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.abs_to">
+<code class="descname">abs_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListHSV out</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.abs_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.add_to">
+<code class="descname">add_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListHSV x</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.add_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>self</em>, <em>ColorHSV c</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append to the list of samples.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.ceil">
+<code class="descname">ceil</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.ceil" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.ceil_to">
+<code class="descname">ceil_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListHSV out</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.ceil_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new copy of self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.count">
+<code class="descname">count</code><span class="sig-paren">(</span><em>self</em>, <em>ColorHSV sample</em><span class="sig-paren">)</span> &rarr; size_t<a class="headerlink" href="#timedata.ColorListHSV.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of times a sample appears in this list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.distance">
+<code class="descname">distance</code><span class="sig-paren">(</span><em>self</em>, <em>x</em><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#timedata.ColorListHSV.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.distance2">
+<code class="descname">distance2</code><span class="sig-paren">(</span><em>self</em>, <em>x</em><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#timedata.ColorListHSV.distance2" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.div">
+<code class="descname">div</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.div" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.div_to">
+<code class="descname">div_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListHSV x</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.div_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.extend">
+<code class="descname">extend</code><span class="sig-paren">(</span><em>self</em>, <em>values</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.extend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extend the samples from an iterator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.floor">
+<code class="descname">floor</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.floor" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.floor_to">
+<code class="descname">floor_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListHSV out</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.floor_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.index">
+<code class="descname">index</code><span class="sig-paren">(</span><em>self</em>, <em>ColorHSV sample</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorListHSV.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an index to the first occurance of that Sample, or
+raises a ValueError if that Sample isn&#8217;t there.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><em>self</em>, <em>int key</em>, <em>ColorHSV sample</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert a sample before key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.invert">
+<code class="descname">invert</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.invert" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.invert_to">
+<code class="descname">invert_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListHSV out</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.invert_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.max">
+<code class="descname">max</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorHSV<a class="headerlink" href="#timedata.ColorListHSV.max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the maximum values of each component.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.max_limit">
+<code class="descname">max_limit</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.max_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.max_limit_to">
+<code class="descname">max_limit_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListHSV x</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.max_limit_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.min">
+<code class="descname">min</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorHSV<a class="headerlink" href="#timedata.ColorListHSV.min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the minimum values of each component/</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.min_limit">
+<code class="descname">min_limit</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.min_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.min_limit_to">
+<code class="descname">min_limit_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListHSV x</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.min_limit_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.mul">
+<code class="descname">mul</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.mul" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.mul_to">
+<code class="descname">mul_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListHSV x</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.mul_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.neg">
+<code class="descname">neg</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.neg" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.neg_to">
+<code class="descname">neg_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListHSV out</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.neg_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>self</em>, <em>int key=-1</em><span class="sig-paren">)</span> &rarr; ColorHSV<a class="headerlink" href="#timedata.ColorListHSV.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pop the sample at key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.pow">
+<code class="descname">pow</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.pow" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.pow_to">
+<code class="descname">pow_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListHSV x</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.pow_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.rdiv">
+<code class="descname">rdiv</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.rdiv" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.rdiv_to">
+<code class="descname">rdiv_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListHSV x</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.rdiv_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>self</em>, <em>ColorHSV sample</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find and remove a specific sample.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.resize">
+<code class="descname">resize</code><span class="sig-paren">(</span><em>self</em>, <em>size_t size</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.resize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the size of the SampleList, filling with black if needed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.reverse">
+<code class="descname">reverse</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.reverse_to">
+<code class="descname">reverse_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListHSV out</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.reverse_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.rotate">
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>self</em>, <em>int pos</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>In-place rotation of the samples forward by <cite>pos</cite> positions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.rotate_to">
+<code class="descname">rotate_to</code><span class="sig-paren">(</span><em>self</em>, <em>int pos</em>, <em>ColorListHSV out</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.rotate_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>In-place rotation of the samples forward by <cite>pos</cite> positions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.round">
+<code class="descname">round</code><span class="sig-paren">(</span><em>self</em>, <em>uint digits=0</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.round" title="Permalink to this definition">¶</a></dt>
+<dd><p>Round each element in each sample to the nearest integer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.round_to">
+<code class="descname">round_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListHSV out</em>, <em>uint digits=0</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.round_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Round each element in each sample to the nearest integer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.rpow">
+<code class="descname">rpow</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.rpow" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.rpow_to">
+<code class="descname">rpow_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListHSV x</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.rpow_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.rsub">
+<code class="descname">rsub</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.rsub" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.rsub_to">
+<code class="descname">rsub_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListHSV x</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.rsub_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.sort">
+<code class="descname">sort</code><span class="sig-paren">(</span><em>self</em>, <em>key=None</em>, <em>bool reverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorListHSV.sort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.sort_to">
+<code class="descname">sort_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListHSV out</em>, <em>key=None</em>, <em>bool reverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorListHSV.sort_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort to another vector.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="timedata.ColorListHSV.spread">
+<em class="property">static </em><code class="descname">spread</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorListHSV.spread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Spreads!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.sub">
+<code class="descname">sub</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.sub" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.sub_to">
+<code class="descname">sub_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListHSV x</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.sub_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.trunc">
+<code class="descname">trunc</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.trunc" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.trunc_to">
+<code class="descname">trunc_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListHSV out</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.trunc_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListHSV.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListHSV.zero">
+<code class="descname">zero</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListHSV<a class="headerlink" href="#timedata.ColorListHSV.zero" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="timedata.ColorListRGB">
+<em class="property">class </em><code class="descclassname">timedata.</code><code class="descname">ColorListRGB</code><span class="sig-paren">(</span><em>items=None</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorListRGB" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of RGB floating point Colors, with many mutating functions.</p>
+<p>A ColorList looks quite like a Python list of Colors (which look like
+tuples) with the big interface difference that operations like + and *
+perform arithmetic and not list construction.</p>
+<p>Written in C++, this class should consume significantly fewer memory and
+CPU resources than a corresponding Python list, as well as providing a
+range of useful facilities.</p>
+<p>While ColorList provides a full set of functions and operations that
+create new ColorLists, in each case there is a corresponding mutating
+function or operation that works &#8220;in-place&#8221; with no heap allocations
+at all, for best performance.</p>
+<dl class="method">
+<dt id="timedata.ColorListRGB.abs">
+<code class="descname">abs</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.abs" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.abs_to">
+<code class="descname">abs_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListRGB out</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.abs_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.add_to">
+<code class="descname">add_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListRGB x</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.add_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.append">
+<code class="descname">append</code><span class="sig-paren">(</span><em>self</em>, <em>ColorRGB c</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append to the list of samples.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.ceil">
+<code class="descname">ceil</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.ceil" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.ceil_to">
+<code class="descname">ceil_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListRGB out</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.ceil_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new copy of self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.count">
+<code class="descname">count</code><span class="sig-paren">(</span><em>self</em>, <em>ColorRGB sample</em><span class="sig-paren">)</span> &rarr; size_t<a class="headerlink" href="#timedata.ColorListRGB.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number of times a sample appears in this list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.distance">
+<code class="descname">distance</code><span class="sig-paren">(</span><em>self</em>, <em>x</em><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#timedata.ColorListRGB.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.distance2">
+<code class="descname">distance2</code><span class="sig-paren">(</span><em>self</em>, <em>x</em><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#timedata.ColorListRGB.distance2" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.div">
+<code class="descname">div</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.div" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.div_to">
+<code class="descname">div_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListRGB x</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.div_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.extend">
+<code class="descname">extend</code><span class="sig-paren">(</span><em>self</em>, <em>values</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.extend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extend the samples from an iterator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.floor">
+<code class="descname">floor</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.floor" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.floor_to">
+<code class="descname">floor_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListRGB out</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.floor_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.index">
+<code class="descname">index</code><span class="sig-paren">(</span><em>self</em>, <em>ColorRGB sample</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorListRGB.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an index to the first occurance of that Sample, or
+raises a ValueError if that Sample isn&#8217;t there.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><em>self</em>, <em>int key</em>, <em>ColorRGB sample</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert a sample before key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.invert">
+<code class="descname">invert</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.invert" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.invert_to">
+<code class="descname">invert_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListRGB out</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.invert_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.max">
+<code class="descname">max</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorRGB<a class="headerlink" href="#timedata.ColorListRGB.max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the maximum values of each component.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.max_limit">
+<code class="descname">max_limit</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.max_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.max_limit_to">
+<code class="descname">max_limit_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListRGB x</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.max_limit_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.min">
+<code class="descname">min</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorRGB<a class="headerlink" href="#timedata.ColorListRGB.min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the minimum values of each component/</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.min_limit">
+<code class="descname">min_limit</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.min_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.min_limit_to">
+<code class="descname">min_limit_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListRGB x</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.min_limit_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.mul">
+<code class="descname">mul</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.mul" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.mul_to">
+<code class="descname">mul_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListRGB x</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.mul_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.neg">
+<code class="descname">neg</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.neg" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.neg_to">
+<code class="descname">neg_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListRGB out</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.neg_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><em>self</em>, <em>int key=-1</em><span class="sig-paren">)</span> &rarr; ColorRGB<a class="headerlink" href="#timedata.ColorListRGB.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pop the sample at key.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.pow">
+<code class="descname">pow</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.pow" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.pow_to">
+<code class="descname">pow_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListRGB x</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.pow_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.rdiv">
+<code class="descname">rdiv</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.rdiv" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.rdiv_to">
+<code class="descname">rdiv_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListRGB x</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.rdiv_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.remove">
+<code class="descname">remove</code><span class="sig-paren">(</span><em>self</em>, <em>ColorRGB sample</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find and remove a specific sample.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.resize">
+<code class="descname">resize</code><span class="sig-paren">(</span><em>self</em>, <em>size_t size</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.resize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the size of the SampleList, filling with black if needed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.reverse">
+<code class="descname">reverse</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.reverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.reverse_to">
+<code class="descname">reverse_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListRGB out</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.reverse_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.rotate">
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>self</em>, <em>int pos</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>In-place rotation of the samples forward by <cite>pos</cite> positions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.rotate_to">
+<code class="descname">rotate_to</code><span class="sig-paren">(</span><em>self</em>, <em>int pos</em>, <em>ColorListRGB out</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.rotate_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>In-place rotation of the samples forward by <cite>pos</cite> positions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.round">
+<code class="descname">round</code><span class="sig-paren">(</span><em>self</em>, <em>uint digits=0</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.round" title="Permalink to this definition">¶</a></dt>
+<dd><p>Round each element in each sample to the nearest integer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.round_to">
+<code class="descname">round_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListRGB out</em>, <em>uint digits=0</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.round_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Round each element in each sample to the nearest integer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.rpow">
+<code class="descname">rpow</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.rpow" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.rpow_to">
+<code class="descname">rpow_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListRGB x</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.rpow_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.rsub">
+<code class="descname">rsub</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.rsub" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.rsub_to">
+<code class="descname">rsub_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListRGB x</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.rsub_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.sort">
+<code class="descname">sort</code><span class="sig-paren">(</span><em>self</em>, <em>key=None</em>, <em>bool reverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorListRGB.sort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.sort_to">
+<code class="descname">sort_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListRGB out</em>, <em>key=None</em>, <em>bool reverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorListRGB.sort_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort to another vector.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="timedata.ColorListRGB.spread">
+<em class="property">static </em><code class="descname">spread</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorListRGB.spread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Spreads!</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.sub">
+<code class="descname">sub</code><span class="sig-paren">(</span><em>self</em>, <em>c</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.sub" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME into this ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.sub_to">
+<code class="descname">sub_to</code><span class="sig-paren">(</span><em>self</em>, <em>c</em>, <em>ColorListRGB x</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.sub_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME onto another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.trunc">
+<code class="descname">trunc</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.trunc" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that mutates self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.trunc_to">
+<code class="descname">trunc_to</code><span class="sig-paren">(</span><em>self</em>, <em>ColorListRGB out</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.trunc_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME that writes to another ColorListRGB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorListRGB.zero">
+<code class="descname">zero</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorListRGB<a class="headerlink" href="#timedata.ColorListRGB.zero" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="timedata.ColorRGB">
+<em class="property">class </em><code class="descclassname">timedata.</code><code class="descname">ColorRGB</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorRGB" title="Permalink to this definition">¶</a></dt>
+<dd><p>A ColorRGB is an immutable RGB floating point color.</p>
+<p>A ColorRGB looks like a Python tuple with $size floating point numbers, with
+the big exception that operators like + and * perform arithmetic, not
+list-style operations.</p>
+<p>The constructor for ColorRGB takes a triple of numbers but also strings
+representing human-readable color names like &#8220;red&#8221; and &#8220;green&#8221;.</p>
+<p>ColorRGB supports the operations <cite>+</cite>, <cite>-</cite>, <cite>*</cite>, <cite>/</cite>, <cite>%</cite>, <cite>pow</cite>, and <cite>~</cite>
+(which means &#8220;take the complementary color&#8221;).</p>
+<p>ColorRGBs are very lightweight - about half the size of a corresponding
+Python tuple and more than twice as fast to create and copy.  ColorRGBs
+are also immutable - all operations on ColorRGBs have to create a new
+ColorRGB.</p>
+<p>The expected range of components in the color is from 0 to 1.0 but
+it&#8217;s perfectly acceptable to have any value in intermediate calculations,
+even infinity.</p>
+<dl class="method">
+<dt id="timedata.ColorRGB.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; ColorRGB<a class="headerlink" href="#timedata.ColorRGB.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new copy of self.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorRGB.distance">
+<code class="descname">distance</code><span class="sig-paren">(</span><em>self</em>, <em>x</em><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#timedata.ColorRGB.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorRGB.distance2">
+<code class="descname">distance2</code><span class="sig-paren">(</span><em>self</em>, <em>x</em><span class="sig-paren">)</span> &rarr; float<a class="headerlink" href="#timedata.ColorRGB.distance2" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="timedata.ColorRGB.from_hex">
+<em class="property">static </em><code class="descname">from_hex</code><span class="sig-paren">(</span><em>uint32_t arg</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorRGB.from_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a $classname from a hex integer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorRGB.limit_max">
+<code class="descname">limit_max</code><span class="sig-paren">(</span><em>self</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorRGB.limit_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorRGB.limit_min">
+<code class="descname">limit_min</code><span class="sig-paren">(</span><em>self</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.ColorRGB.limit_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorRGB.rotated">
+<code class="descname">rotated</code><span class="sig-paren">(</span><em>self</em>, <em>int index</em><span class="sig-paren">)</span> &rarr; ColorRGB<a class="headerlink" href="#timedata.ColorRGB.rotated" title="Permalink to this definition">¶</a></dt>
+<dd><p>FIXME</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="timedata.ColorRGB.to_hex">
+<code class="descname">to_hex</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span> &rarr; uint32_t<a class="headerlink" href="#timedata.ColorRGB.to_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the nearest hex for this color</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="timedata.Renderer">
+<em class="property">class </em><code class="descclassname">timedata.</code><code class="descname">Renderer</code><span class="sig-paren">(</span><em>level=1.0</em>, <em>*</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.Renderer" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="timedata.Renderer.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>self</em>, <em>colors</em>, <em>bytearray output=None</em><span class="sig-paren">)</span><a class="headerlink" href="#timedata.Renderer.render" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="timedata.compile_timestamp">
+<code class="descclassname">timedata.</code><code class="descname">compile_timestamp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#timedata.compile_timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string with the compilation time of this module in UTC.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="timedata.git_tags">
+<code class="descclassname">timedata.</code><code class="descname">git_tags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#timedata.git_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string representing the git branch and commit ID that this
+release of timedata was compiled with.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="timedata.optimization_flags">
+<code class="descclassname">timedata.</code><code class="descname">optimization_flags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#timedata.optimization_flags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string with the optimization flags passed to the compiler
+and linker.</p>
+<p>Useful for benchmarks so you can experiment with different
+optimization flags and automatically record the results.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="timedata.print_startup_message">
+<code class="descclassname">timedata.</code><code class="descname">print_startup_message</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#timedata.print_startup_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a string with the startup message.</p>
+<p>To silence the printing of this message at startup, set the
+environment variable TIMEDATA_SILENT_STARTUP.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to timedata&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Tom Swirly.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/index.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
